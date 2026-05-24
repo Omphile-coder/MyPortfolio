@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fe; 
+    color: #1a1a24; 
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Make images and videos responsive */
+img, video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* 
+   1. TYPOGRAPHY
+*/
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #ffb800; 
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p {
+    color: #6b6b7b; 
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+/*
+   3. OVERRIDING INLINE TABLE STYLES
+*/
+table[border="1"], table, td, tr {
+    border: none !important;
+    border-collapse: collapse;
+}
+
+/*
+   4. NAVIGATION / HEADER
+ */
+header {
+    background-color: #ffffff;
+    padding: 15px 5%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header table {
+    width: 100%;
+}
+
+header td {
+    vertical-align: middle;
+}
+
+header a {
+    text-decoration: none;
+    color: #1a1a24;
+    font-weight: 500;
+    margin-left: 30px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Hover effects for links */
+header a:hover {
+    color: #0044ff; /* Primary blue color */
+}
+
+/*
+   5. MAIN CONTENT SECTIONS
+ */
+section {
+    padding: 80px 5%;
+}
+
+article {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Styling the Skills List */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+ul li {
+    background-color: #eef2ff;
+    color: #0044ff;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+}
+
+ul li:hover {
+    transform: translateY(-3px);
+    background-color: #0044ff;
+    color: #ffffff;
+}
+
+/* Flexbox for About Section */
+#about table tr {
+    display: flex;
+    flex-direction: column-reverse; 
+    align-items: center;
+    gap: 40px;
+}
+
+#about td {
+    width: 100%;
+    text-align: center;
+}
+
+#about img {
+    border-radius: 20px;
+    box-shadow: 10px 10px 0px #ffb800;
+    border: 4px solid #ffffff;
+}
+
+/*
+   6. FORMS / CONTACT SECTION
+ */
+label {
+    font-weight: 600;
+    color: #1a1a24;
+    font-size: 1.1rem;
+}
+
+/*
+   7. FOOTER
+ */
+footer {
+    background-color: #1a1a24;
+    color: #ffffff;
+    padding: 50px 5%;
+    margin-top: auto;
+}
+
+footer table tr {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+}
+
+footer a {
+    color: #ffb800;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+.footer-right iframe {
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 300px;
+}
+
+/*
+   8. MEDIA QUERIES 
+ */
+@media (min-width: 768px) {
+    
+    
+    #about table tr {
+        flex-direction: row; 
+        justify-content: space-between;
+    }
+    
+    #about td:first-child {
+        text-align: left;
+        width: 60%;
+    }
+    
+    #about td:last-child {
+        width: 40%;
+    }
+    
+    footer table tr {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+    
+    footer td {
+        width: 33.33%;
+    }
+}
+/* --- Hamburger Menu CSS --- */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none; /* Hide the actual checkbox */
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Mobile Menu Logic */
+@media (max-width: 767px) {
+    .hamburger {
+        display: block; /* Show hamburger icon on mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide links by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #ffffff;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    /* When checkbox is checked, show the menu */
+    .menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+}
